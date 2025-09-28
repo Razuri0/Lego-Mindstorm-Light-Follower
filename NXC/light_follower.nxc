@@ -1,0 +1,39 @@
+/* 
+Light Follower Robot NXC example
+Author: David Laurent Reinhardt
+Course: "System Design Projekt", Winter Semester 2025/2026
+
+Description:
+This program implements a simple light-following robot using a proportional controller.
+The robot uses two light sensors to detect the intensity of light on its left and right sides.
+Based on the difference in light intensity, it adjusts its motor speed to turn towards the light source.
+*/
+
+
+// Constants
+#define LIGHT_LEFT Sensor(IN_1)
+#define LIGHT_RIGHT Sensor(IN_2)
+#define MOTOR OUT_A
+#define P_TERM 1.0
+
+
+//  p(roportional)-controller
+float p_controller(float input_1, float input_2, float p_term) {
+    float difference = input_1 - input_2;
+    return p_term * difference;
+}
+
+
+//  "task main()" is executed when the program starts
+task main() {
+
+    // variable to store p_controller output
+    float motor_power;
+
+    //  loops forever
+    while(true) {
+        motor_power = p_controller(LIGHT_LEFT, LIGHT_RIGHT, P_TERM);
+        OnFwd(MOTOR, motor_power);
+        Wait(100);
+    }
+}
