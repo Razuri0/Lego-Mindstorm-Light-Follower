@@ -22,11 +22,11 @@ from ev3dev2.sensor.lego import LightSensor
 LIGHT_LEFT = LightSensor(INPUT_1)
 LIGHT_RIGHT = LightSensor(INPUT_2)
 MOTOR = LargeMotor(OUTPUT_A)
-P_TERM: float = 1.0
+P_TERM = 1.0
 
 
 def p_controller(sensor_left: LightSensor, sensor_right: LightSensor, p_term: float) -> float:
-    difference: float = sensor_left.reflected_light_intensity - sensor_right.reflected_light_intensity
+    difference = sensor_left.reflected_light_intensity - sensor_right.reflected_light_intensity
     return difference * p_term
 
 
@@ -34,10 +34,10 @@ def p_controller(sensor_left: LightSensor, sensor_right: LightSensor, p_term: fl
 if __name__ == "__main__":
 
     # variable to store p_controller output
-    motor_power: float
+    motor_power = 0.0
 
     # loops forever
     while True:
         motor_power = p_controller(LIGHT_LEFT, LIGHT_RIGHT, P_TERM)
         MOTOR.on(motor_power)
-        sleep(0.01)
+        sleep(0.1)

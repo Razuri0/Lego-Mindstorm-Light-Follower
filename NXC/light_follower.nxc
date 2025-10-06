@@ -18,14 +18,16 @@ Based on the difference in light intensity, it adjusts its motor speed to turn t
 
 
 //  p(roportional)-controller
-float p_controller(float input_1, float input_2, float p_term) {
-    float difference = input_1 - input_2;
+int p_controller(int input_1, int input_2, float p_term) {
+    int difference = input_1 - input_2;
     return p_term * difference;
 }
 
 
 //  "task main()" is executed when the program starts
 task main() {
+    SetSensorLight(IN_1);
+    SetSensorLight(IN_2);
 
     // variable to store p_controller output
     float motor_power;
@@ -33,7 +35,7 @@ task main() {
     //  loops forever
     while(true) {
         motor_power = p_controller(LIGHT_LEFT, LIGHT_RIGHT, P_TERM);
-        OnFwd(MOTOR, motor_power);
+        OnRev(MOTOR, -motor_power);
         Wait(100);
     }
 }
