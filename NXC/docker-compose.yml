@@ -1,0 +1,20 @@
+services:
+  usb_app:
+    image: archlinux multilib-devel
+    container_name: Mindstorm builder
+    restart: none
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    group_add:
+      - dialout
+    privileged: true
+    volumes:
+      - /dev:/dev
+    environment:
+      - TZ=UTC
+    command: 
+      bash -c "pacman -Syu yay --noconfirm nbc && bash"
+      yay -S nbc --noconfirm
+      nbc light_follower.nxc -r
+      sudo shutdown now
+    tty: true
