@@ -56,8 +56,8 @@ A small overview:
 
 
 Install [rustup](https://rust-lang.org/tools/install/)
-Install the `armv5te-musl` toolchain
 
+Install the `armv5te-musl` toolchain
 ```bash
 rustup target add armv5te-unknown-linux-musleabi
 ```
