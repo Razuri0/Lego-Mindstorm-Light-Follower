@@ -44,7 +44,7 @@ If detected your EV3 should listed on the top of VSCode. Select it by clicking o
 
 ![Your Brick should be listed here](assets/image_2.png)
 
-You EV3 should now be listed on the bottom left. You can see Battery status and the filesystem. You can upload your worksapce by pressing the top right corner of the EV3DEV DEVICE BROWSER.
+You EV3 should now be listed on the bottom left. You can see Battery status and the filesystem. You can upload your worksapce by pressing the button in the top right corner of the EV3DEV DEVICE BROWSER.
 
 ![You can now acces the filesystem](assets/image_3.png)
 
