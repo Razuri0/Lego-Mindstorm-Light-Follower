@@ -71,7 +71,7 @@ cargo build --release
 the executable is in ```Rust/target/arm5te-unknown-linux-musleabi/release``` and can be uploaded the same way as when using Python
 ## Credits
 
-...
+....
 
 ## License
 
