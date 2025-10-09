@@ -24,7 +24,9 @@ I am using [Next Byte Code](https://bricxcc.sourceforge.net/nbc/) to compile and
 
 After installing NBC, for your respective operting system, run: 
 
-```nbc <path_to_.nxc_file> -r```
+```bash
+nbc path_to_.nxc_file -r
+```
 
 If your NXT is turned on and connected, NBC should automatically upload and execute your code.
 
@@ -46,8 +48,27 @@ You EV3 should now be listed on the bottom left. You can see Battery status and 
 
 ![You can now acces the filesystem](assets/image_3.png)
 
+### EV3 using Rust
+
+I recommend looking at the [EV3DEV lang rust](https://github.com/pixix4/ev3dev-lang-rust/blob/master/README.md) Github for more detailed instructions.
+
+A small overview:
 
 
+Install [rustup](https://rust-lang.org/tools/install/)
+Install the `armv5te-musl` toolchain
+
+```bash
+rustup target add armv5te-unknown-linux-musleabi
+```
+
+Build binary from inside the "Rust" directory
+
+```bash
+cargo build --release
+```
+
+the executable is in ```Rust/target/arm5te-unknown-linux-musleabi/release``` and can be uploaded the same way as when using Python
 ## Credits
 
 ...
