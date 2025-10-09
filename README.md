@@ -1,10 +1,10 @@
 # Lego-Mindstorm-Light-Follower
 
-# Description
+## Description
 
 This Demo implements a simple proportion controller on the Lego Mindstorm platform for both the NXT and EV3. This controller is using two light sensor as input and a motor ad output. The idea for this arrangment is tracking a light source by using the difference between the two sensors and rotating on its axis for tracking
 
-# Construction
+## Construction
 
 A very simple robot construction is used for demo purposes.
 The robot, as can be seen in picture 1 to 3, consists of a baseplate that uses rubber wheels to resist slipping, a motor, that is connected to the baseplat and secured at the frame, the Lego mindsotmr controller itself and two, forward facing, light sensors.
@@ -15,20 +15,20 @@ A possible modification, to this configurating, would be adding a second axis of
 ![front view](assets/IMG_20251009_140749__01.jpg)
 ![top view](assets/IMG_20251009_140829__01.jpg)
 
-# How to install
+## How to install
 
-## NXT using NXC
+### NXT using NXC
 Connect the turned on NXT Brick using USB.
 
 I am using [Next Byte Code](https://bricxcc.sourceforge.net/nbc/) to compile and upload my code.
 
 After installing NBC, for your respective operting system, run: 
 
-$ nbc <path_to_.nxc_file> -r
+```nbc <path_to_.nxc_file> -r```
 
 If your NXT is turned on and connected, NBC should automatically upload and execute your code.
 
-## EV3 using Python
+### EV3 using Python
 
 Connect the turned on EV3 Brick using USB 
 
@@ -48,10 +48,10 @@ You EV3 should now be listed on the bottom left. You can see Battery status and 
 
 
 
-# Credits
+## Credits
 
 ...
 
-# License
+## License
 
 ...
