@@ -29,7 +29,7 @@ fn clamp(v: i32, min: i32, max: i32) -> i32 {
 }
 
 
-//  "task main()" is executed when the program starts
+//  "task main()" is executed at programm start
 fn main() -> Ev3Result<()> {
 
     // Constants

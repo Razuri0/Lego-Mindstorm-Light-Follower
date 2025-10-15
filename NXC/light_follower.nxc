@@ -24,7 +24,7 @@ float p_controller(int input_1, int input_2, float p_term) {
 }
 
 
-//  "task main()" is executed when the program starts
+//  "task main()" is executed at program start
 task main() {
     SetSensorLight(IN_1);
     SetSensorLight(IN_2);

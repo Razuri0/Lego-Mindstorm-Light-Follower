@@ -31,7 +31,7 @@ def p_controller(sensor_left: int, sensor_right: int, p_term: float) -> float:
     return p_term * difference
 
 
-# is executed when the program is started
+# is executed at programm start
 if __name__ == "__main__":
 
     # variable to store p_controller output
