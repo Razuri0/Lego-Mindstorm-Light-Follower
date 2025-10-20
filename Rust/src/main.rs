@@ -1,5 +1,5 @@
 /* 
-Light Follower Robot NXC example
+Light Follower Robot Rust example
 Author: David Laurent Reinhardt
 Course: "System Design Projekt", Winter Semester 2025/2026
 
