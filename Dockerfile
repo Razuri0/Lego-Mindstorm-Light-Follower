@@ -34,6 +34,7 @@ RUN if [ "$MODE" = "nxc" ]; then \
         rustup target add armv5te-unknown-linux-musleabi && \
         make rust; \
     elif [ "$MODE" = "c++" ]; then \
+        sudo apt install g++-arm-linux-gnueabihf \
         make c++; \
     elif [ "$MODE" = "test" ]; then \
         make test; \
