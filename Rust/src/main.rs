@@ -35,10 +35,12 @@ fn pid_controller(sensor_left: i32, sensor_right: i32, dt: f32, integral: &mut f
     Ok(output as i32)
 }
 
+
 // clamps a value between min and max
 fn clamp(v: i32, min: i32, max: i32) -> i32 {
     if v < min { min } else if v > max { max } else { v }
 }
+
 
 // function to get current time in milliseconds
 fn current_time_millis() -> i64 {
