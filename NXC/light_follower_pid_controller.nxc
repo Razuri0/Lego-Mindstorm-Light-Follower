@@ -1,0 +1,67 @@
+/*
+Light Follower Robot NXC example
+Author: David Laurent Reinhardt, Till Steinmann
+Course: "System Design Projekt", Winter Semester 2025/2026
+
+Description:
+This program implements a simple light-following robot using a proportional controller.
+The robot uses two light sensors to detect the intensity of light on its left and right sides.
+Based on the difference in light intensity, it adjusts its motor speed to turn towards the light source.
+*/
+
+// Constants
+#define LIGHT_LEFT Sensor(IN_1)
+#define LIGHT_RIGHT Sensor(IN_2)
+#define MOTOR OUT_A
+
+// PID constants
+#define KP 1.0
+#define KI 1.0
+#define KD 1.0
+
+// Global PID variables
+float prev_error = 0.0;
+float integral = 0.0;
+
+// --- PID Controller Function ---
+float pidController(int sensor_left, int sensor_right, float dt) {
+    float error = sensor_right - sensor_left;
+    integral += error * dt;
+    float derivative = 0.0;
+    if (dt > 0.0)
+        derivative = (error - prev_error) / dt;
+
+    float output = KP * error + KI * integral + KD * derivative;
+    prev_error = error;
+
+    return output;
+}
+
+//  "task main()" is executed at program start
+task main() {
+    SetSensorLight(IN_1);
+    SetSensorLight(IN_2);
+
+    // variable to store pidController output
+    float motor_power = 0.0;
+    float dt = 0.0;
+    long current_time, last_time;
+
+    last_time = CurrentTick();
+
+    //  loops forever
+    while (true) {
+        // Time difference
+        current_time = CurrentTick();
+        dt = (current_time - last_time) / 1000.0; // convert ms to seconds
+        last_time = current_time;
+
+        // Compute PID output
+        motor_power = pidController(LIGHT_LEFT, LIGHT_RIGHT, dt);
+
+        OnFwd(MOTOR, motor_power);
+
+        //  wait for 100 milliseconds
+        Wait(100);
+    }
+}
