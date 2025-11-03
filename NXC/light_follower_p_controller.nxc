@@ -15,7 +15,7 @@ Based on the difference in light intensity, it adjusts its motor speed to turn t
 #define LIGHT_RIGHT Sensor(IN_2)
 #define MOTOR OUT_A
 
-// Proportional term for the controller
+// P gain for the controller
 #define P_TERM 1.0
 
 

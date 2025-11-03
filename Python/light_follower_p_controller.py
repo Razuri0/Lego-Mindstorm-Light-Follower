@@ -23,7 +23,7 @@ LIGHT_LEFT = LightSensor(INPUT_1)
 LIGHT_RIGHT = LightSensor(INPUT_2)
 MOTOR = LargeMotor(OUTPUT_A)
 
-# P term for the proportional controller
+# P gain for the proportional controller
 P_TERM = 1.0
 
 
