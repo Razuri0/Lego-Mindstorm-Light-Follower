@@ -23,7 +23,7 @@ Based on the difference in light intensity, it adjusts its motor speed to turn t
 float prev_error = 0.0;
 float integral = 0.0;
 
-// --- PID Controller Function ---
+// PID Controller function
 float pidController(int sensor_left, int sensor_right, float dt) {
     float error = sensor_right - sensor_left;
     integral += error * dt;

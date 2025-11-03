@@ -25,10 +25,10 @@ I am using [Next Byte Code](https://bricxcc.sourceforge.net/nbc/) to compile and
 After installing NBC, for your respective operting system, run: 
 
 ```bash
-nbc path_to_.nxc_file -r
+nbc path_to_.nxc_file -d
 ```
 
-If your NXT is turned on and connected, NBC should automatically upload and execute your code.
+If your NXT is turned on and connected, NBC should automatically upload your code.
 
 ### EV3 using Python
 
@@ -69,6 +69,18 @@ cargo build --release
 ```
 
 the executable is in ```Rust/target/arm5te-unknown-linux-musleabi/release``` and can be uploaded the same way as when using Python
+
+### EV3 using C++
+
+```bash
+sudo apt install g++-arm-linux-gnueabihf
+```
+
+```bash
+arm-linux-gnueabi-g++ -O2 -static -std=c++17 -o light_follower light_follower.cpp
+```
+
+
 ## Credits
 
 ....
