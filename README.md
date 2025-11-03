@@ -72,14 +72,7 @@ the executable is in ```Rust/target/arm5te-unknown-linux-musleabi/release``` and
 
 ### EV3 using C++
 
-```bash
-sudo apt install g++-arm-linux-gnueabihf
-```
-
-```bash
-arm-linux-gnueabi-g++ -O2 -static -std=c++17 -o light_follower light_follower.cpp
-```
-
+https://github.com/ddemidov/ev3dev-lang-cpp
 
 ## Credits
 
